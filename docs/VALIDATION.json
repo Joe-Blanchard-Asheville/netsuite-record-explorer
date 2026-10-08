@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08T06:34:21.374Z",
+  "browser": "143.0.7499.0",
+  "checks": [
+    "Partial graph discloses missing coverage without exposing a denied invoice",
+    "Zoom and keyboard node inspection",
+    "Denied root clears previous graph and record preview",
+    "390px layout has no document overflow",
+    "Standalone demo completes the main workflow without network requests",
+    "No browser JavaScript errors"
+  ],
+  "errors": [],
+  "scope": "Standalone fictional-data workflows. Native NetSuite validation not performed.",
+  "automatedTests": {
+    "passed": 27,
+    "scope": "Domain, service, native API mock and HTTP boundary tests"
+  },
+  "build": "Standalone HTML plus six native deployment files generated successfully"
+}

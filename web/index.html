@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NetSuite Record Explorer</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <aside class="rail">
+      <a class="brand" href="./" aria-label="Home">◇</a>
+      <div class="rail-label">NETSUITE TOOLS</div>
+      <p style="padding: 1rem">NetSuite Record Explorer</p>
+      <div class="rail-bottom">
+        <span class="status-dot"></span> Development preview<small
+          >Joe Blanchard</small
+        >
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div class="breadcrumb">NETSUITE RECORD EXPLORER</div>
+        <div class="environment" id="environment">Connecting…</div>
+      </header>
+      <div id="notice" role="status" aria-live="polite"></div>
+      <section id="graph-view" class="view">
+        <div class="intro">
+          <div>
+            <div class="eyebrow">02 / CONNECT</div>
+            <h1>Trace transaction relationships</h1>
+            <p>Trace a transaction. Inspect the links. Know what is missing.</p>
+          </div>
+          <div class="intro-note">
+            <span class="mini-orbit">◇</span
+            ><strong>Inspect each connection.</strong
+            ><span>Every connection carries its source.</span>
+          </div>
+        </div>
+        <form id="graph-form" class="toolbar">
+          <label
+            >Root record<input
+              id="graph-key"
+              value="salesorder:201"
+              placeholder="salesorder:123" /></label
+          ><label
+            >Depth<select id="depth">
+              <option>1</option>
+              <option>2</option>
+              <option selected>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select></label
+          ><button class="primary">Trace relationships</button>
+          <div class="zoom">
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button
+            ><output id="zoom-label">100%</output
+            ><button type="button" id="zoom-in" aria-label="Zoom in">+</button
+            ><button type="button" id="zoom-reset">Fit</button>
+          </div>
+        </form>
+        <div id="graph-warnings"></div>
+        <div class="graph-workspace">
+          <div class="panel graph-panel">
+            <div class="panel-heading">
+              <h2>Relationship map</h2>
+              <span id="graph-count" class="muted"></span>
+            </div>
+            <div
+              id="graph-canvas"
+              tabindex="0"
+              aria-label="Scrollable relationship map; use record list below for keyboard navigation"
+            >
+              <svg
+                id="graph-svg"
+                role="img"
+                aria-label="Record relationships"
+              ></svg>
+            </div>
+            <div class="graph-legend">
+              <span><i class="legend-dot orange"></i>Order</span
+              ><span><i class="legend-dot teal"></i>Fulfillment / receipt</span
+              ><span><i class="legend-dot purple"></i>Invoice</span
+              ><span>Drag to pan · + / − to zoom</span>
+            </div>
+            <details class="accessible-map">
+              <summary>Record list and connection evidence</summary>
+              <div id="graph-list"></div>
+            </details>
+          </div>
+          <aside class="preview panel" id="graph-preview">
+            <div class="empty-icon">◇</div>
+            <h2>Follow a connection</h2>
+            <p>Choose a node to inspect the record and its relationships.</p>
+          </aside>
+        </div>
+        <p class="footnote" id="coverage">
+          Configured relationships visible to your role. A partial map is never
+          presented as complete.
+        </p>
+      </section>
+      <footer>
+        <span>NetSuite Record Explorer</span
+        ><span id="footer-mode"
+          >Fictional demo data. NetSuite sandbox validation pending.</span
+        >
+      </footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

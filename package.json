@@ -1,0 +1,28 @@
+{
+  "name": "netsuite-record-explorer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A read-only NetSuite transaction relationship explorer with bounded graph traversal, source evidence, and explicit coverage limits.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.cjs tests/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test:browser": "node scripts/browser-test.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "prettier": "3.6.2"
+  },
+  "license": "Apache-2.0",
+  "author": "Joe Blanchard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joe-Blanchard-Asheville/netsuite-record-explorer.git"
+  }
+}
